@@ -40,7 +40,7 @@ gem 'ruby-lint'
 gem 'reek'
 gem 'fasterer'
 gem 'debride'
-gem 'rcodetools'
+gem 'solargraph'
 
 group :development, :test do
   gem 'sqlite3'
