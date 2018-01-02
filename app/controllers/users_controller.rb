@@ -53,15 +53,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  # defore action
-  def logged_in_user
-    if !logged_in?
-      store_location
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url
-    end
-  end
-
   def correct_user
     @user = User.find(params[:id])
     if !current_user?(@user)

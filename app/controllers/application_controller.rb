@@ -3,4 +3,14 @@ class ApplicationController < ActionController::Base
 
   # available in any controllers
   include SessionsHelper
+
+  private
+  # defore action
+  def logged_in_user
+    if !logged_in?
+      store_location
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url
+    end
+  end
 end
